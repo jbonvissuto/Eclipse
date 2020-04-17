@@ -119,7 +119,7 @@ public class StackClass<T> implements StackADT<T>
     public boolean equalStack(StackClass<T> otherStack)
     {
         boolean isEqual = true;
-        
+        return isEqual;
         //Dr. Wei Yu: add you code here!!!
         
     } //end equalStack

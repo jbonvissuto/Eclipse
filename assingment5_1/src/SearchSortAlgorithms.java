@@ -15,6 +15,7 @@ public class SearchSortAlgorithms<T> implements SearchSortADT<T>
     public int noOfComparisons()
     {
         //Dr. Yu - finish this method
+    	return 1;
     }
 
     public void initializeNoOfComparisons()
