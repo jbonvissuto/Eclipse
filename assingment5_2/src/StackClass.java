@@ -1,3 +1,4 @@
+import javax.print.attribute.standard.MediaSize.Other;
 
 public class StackClass<T> implements StackADT<T>
 {
@@ -118,10 +119,18 @@ public class StackClass<T> implements StackADT<T>
 
     public boolean equalStack(StackClass<T> otherStack)
     {
-        boolean isEqual = true;
-        return isEqual;
-        //Dr. Wei Yu: add you code here!!!
         
+        //Dr. Wei Yu: add you code here!!!
+        if(maxStackSize != otherStack.maxStackSize || stackTop != otherStack.stackTop)
+        	return false;
+        else
+        	for(int i = 0; i < maxStackSize; i ++) {
+        		if(list[i] != otherStack.list[i])
+        			return false;
+        	}
+        return true;
+        
+       
     } //end equalStack
 }
 

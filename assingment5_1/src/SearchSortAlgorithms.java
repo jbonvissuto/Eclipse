@@ -1,3 +1,6 @@
+//COSC 237-101
+//Name: Jackson K. Bonvissuto
+//ID: 0716190
 //Generic interface that describes various searching and sorting
 //algorithms. Note that the type parameter is unbounded. However,
 //for these algorithms to work correctly, the data objects must
@@ -14,13 +17,12 @@ public class SearchSortAlgorithms<T> implements SearchSortADT<T>
 
     public int noOfComparisons()
     {
-        //Dr. Yu - finish this method
-    	return 1;
+    	return comparisons;
     }
 
     public void initializeNoOfComparisons()
     {
-        //Dr. Yu 
+        comparisons = 0;
     }
 
        //Sequantial search algorithm.
@@ -34,7 +36,8 @@ public class SearchSortAlgorithms<T> implements SearchSortADT<T>
 
         for (loc = start; loc < length; loc++)
         {
-             if (list[loc].equals(searchItem))
+            comparisons++;
+        	if (list[loc].equals(searchItem))
             {
                 found = true;
                 break;
@@ -65,7 +68,7 @@ public class SearchSortAlgorithms<T> implements SearchSortADT<T>
             mid = (first + last) / 2;
 
             Comparable<T> compElem = (Comparable<T>) list[mid];
-
+            comparisons++;
             if (compElem.compareTo(searchItem) == 0)
                 found = true;
             else
@@ -119,24 +122,23 @@ public class SearchSortAlgorithms<T> implements SearchSortADT<T>
        //Bubble sort algorithm.
        //Postcondition: list objects are in ascending order.
     public void bubbleSort(T list[], int length)
- {
+    {
      for (int iteration = 1; iteration < length; iteration++)
-     {
-         for (int index = 0; index < length - iteration;
-                             index++)
-         {
-             Comparable<T> compElem =
-                           (Comparable<T>) list[index];
-
+     	{
+         for (int index = 0; index < length - iteration; index++)
+                             
+         	{
+             Comparable<T> compElem = (Comparable<T>) list[index];
+             comparisons++;
              if (compElem.compareTo(list[index + 1]) > 0)
-             {
+             	{
                  T temp = list[index];
                  list[index] = list[index + 1];
                  list[index + 1] = temp;
-             }
-         }
-     }
- }//end bubble sort
+             	}
+         	}
+     	}
+    }//end bubble sort
 
        //Selection sort algorithm.
        //Postcondition: list objects are in ascending order.
@@ -247,7 +249,7 @@ public class SearchSortAlgorithms<T> implements SearchSortADT<T>
         for (int index = first + 1; index <= last; index++)
         {
             Comparable<T> compElem = (Comparable<T>) list[index];
-
+            comparisons++;
             if (compElem.compareTo(pivot) < 0)
             {
                 smallIndex++;
@@ -313,7 +315,7 @@ public class SearchSortAlgorithms<T> implements SearchSortADT<T>
             {
                 Comparable<T> compElem =
                          (Comparable<T>) list[largeIndex];
-
+                comparisons++;
                 if (compElem.compareTo(list[largeIndex + 1]) < 0)
                     largeIndex = largeIndex + 1; //index of the
                                                //largest child

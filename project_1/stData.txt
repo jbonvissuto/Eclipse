@@ -1,4 +1,4 @@
-6 360
+7 360
 Lisa Miller 890238 Y 4
 Mathematics MTH345 4 A
 Physics PHY357 3 B
@@ -37,3 +37,11 @@ Wilson Chabner 797219 N 3
 Biology BIO234 4 B
 Mathematics MTH137 3 B
 Physics PHY357 3 A
+
+Enna Gurung 12345 Y 6
+Health HLTH101 3 C
+ArtDig DIGART101 3 B
+Art2   ART201 3 B
+Math  MTH101 3 C 
+Japanesse JPN102 3 C
+Tsem TSEM101 3 B

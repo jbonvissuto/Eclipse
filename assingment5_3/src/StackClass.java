@@ -1,4 +1,6 @@
-
+//COSC 237-101
+//Name: Jackson K. Bonvissuto
+//ID: 0716190
 public class StackClass<T> implements StackADT<T>
 {
     private int maxStackSize;  //variable to store the
@@ -118,7 +120,16 @@ public class StackClass<T> implements StackADT<T>
 
     public void reverseStack(StackClass<T> otherStack)
     {
-         //Dr. Yu: Please add you code here!
+      otherStack.maxStackSize = maxStackSize;
+      otherStack.list = (T[]) new Object [maxStackSize];
+      otherStack.stackTop = stackTop;
+      System.out.println("top = " + otherStack.stackTop);
+      for(int i = 0; i < otherStack.stackTop; i++) {
+    	otherStack.list[i] = list[(otherStack.stackTop-1) - i];  
+      }
+       
+        
+         
       
     } //end reverseStack
 }
